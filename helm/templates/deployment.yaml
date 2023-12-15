@@ -37,14 +37,14 @@ spec:
             - name: http
               containerPort: 8082
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8082
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8082
+          # livenessProbe:
+          #   httpGet:
+          #     path: /helloworld
+          #     port: 8082
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 8082
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
